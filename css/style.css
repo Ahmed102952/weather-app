@@ -170,6 +170,7 @@ body {
     }
     .panel {
         width: 100%;
+        height: auto;
         padding-left: 1rem;
     }
     .btn {
