@@ -162,7 +162,7 @@ body {
 }
 @media screen and (max-width: 650px) {
     html {
-        font-size: 15px;
+        font-size: 13px;
     }
     .weather-app {
         flex-direction: column;
@@ -178,9 +178,6 @@ body {
     }
     .btn {
         width: 15%;
-    }
-    html {
-        font-size: 10px;
     }
     .temp {
         font-size: 4rem;
