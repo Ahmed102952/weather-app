@@ -44,7 +44,6 @@ function performAction(event){
         cloud: data.current.cloud,
         text: data.current.condition.text,
     };
-      console.log(weatherData)
       updateUI()
     }) 
     
@@ -146,7 +145,7 @@ const updateUI = ()=> {
     } else {
       timeOfTheDay = 'night'
     }
-    body.style.backgroundImage = `url(../assests/img/${timeOfTheDay}/${skyState}.jpg)`
+    body.style.backgroundImage = `url(../assests/img/${timeOfTheDay}/${skyState}.)`
     let time = new Date(localtime * 1000)
     let h = time.getHours().toLocaleString('en-US', {minimumIntegerDigits: 2});
     let min = time.getMinutes().toLocaleString('en-US', {minimumIntegerDigits: 2});
