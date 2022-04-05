@@ -166,11 +166,11 @@ body {
     }
     .weather {
         width: 100%;
-        height: auto;
+        height: 30vh;
     }
     .panel {
         width: 100%;
-        height: auto;
+        height: 70vh;
         padding-left: 1rem;
     }
     .btn {
