@@ -145,7 +145,7 @@ const updateUI = ()=> {
     } else {
       timeOfTheDay = 'night'
     }
-    body.style.backgroundImage = `url(../assests/img/${timeOfTheDay}/${skyState}.)`
+    body.style.backgroundImage = `url(../assests/img/${timeOfTheDay}/${skyState}.jpg)`
     let time = new Date(localtime * 1000)
     let h = time.getHours().toLocaleString('en-US', {minimumIntegerDigits: 2});
     let min = time.getMinutes().toLocaleString('en-US', {minimumIntegerDigits: 2});
