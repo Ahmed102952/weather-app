@@ -97,8 +97,8 @@ body {
     background-color: #e97603;
     cursor: pointer;
 }
-.btn i {
-    font-size: 2rem;
+.btn img {
+    width: 32px;
 }
 .city-details,
 .weather-stats {
