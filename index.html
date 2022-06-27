@@ -1,64 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- favicon -->
-    <link rel="icon" type="image/x-icon" href="/assests/img/favicon/weather.ico">
-    <title>Breif Weather App</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- title -->
+    <title>Weather Jornal</title>
+    <!-- script -->
+    <script defer> var exports = {}; </script>
+    <script src="./build/app.js" defer></script>
     <!-- css link -->
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./style.css" />
+    <!-- favicon -->
+    <link rel="icon" type="image/x-icon" href="/images/favicon/weather.ico">
+  </head>
+  <body>
     <div class="weather-app">
-        <div class="weather">
-            <h1>The Weather</h1>
-            <div class="weather-detials">
-                <span class="temp">16&deg;</span>
-                <div> 
-                    <h2 class="city">London</h2>
-                    <p class="date">6:09-Monday, 9 sep '22</p>
-                </div>
-                <div>
-                    <img style="width: auto; height: auto;" width="auto" height="auto" src="https://cdn.weatherapi.com/weather/64x64/day/113.png" alt="icon" class="icon">
-                    <p class="sky">Cloudy</p>
-                </div>
-            </div>
+        <div class="bg">
+            <img src="./images/day/cloudy.jpg" alt="bg" width="100" height="100">
         </div>
-        <div class="panel">
-            <form action="">
-                <div class="form">
-                    <input type="text" name="location" id="location" placeholder="Location...">
-                <button class="btn" aria-label="Search">
-                    <img src="./assests/img/search.png" width="auto" height="auto" alt="Search">
-                </button>
-                </div>
-            </form>
-            <div class="city-details">
-                <div>
-                    <span>Country</span>
-                    <span class="country">UK</span>  
-                </div>              
-            </div>
-            
-            <div class="weather-stats">
-                <h2>Weather Stats</h2>
-                <div>
-                    <span>Clouds</span>
-                    <span class="cloud">86%</span>
-                </div>
-                <div>
-                    <span>Humidity</span>
-                    <span class="humidity">62%</span>
-                </div>
-                <div>
-                    <span>Wind</span>
-                    <span class="wind-speed">8km/h</span>
-                </div>
-            </div>
+      <div class="weather">
+        <h1>The Weather</h1>
+        <div class="weather-detials">
+          <span class="temp">16&deg;</span>
+          <div>
+            <h2 class="city">London</h2>
+            <p class="date">6:09-Monday, 9 sep '22</p>
+          </div>
+          <div>
+            <img
+              style="width: auto; height: auto"
+              src="https://cdn.weatherapi.com/weather/64x64/day/113.png"
+              alt="icon"
+              class="icon"
+            />
+            <p class="sky">Cloudy</p>
+          </div>
         </div>
+      </div>
+      <div class="panel">
+        <form id="form">
+          <div class="form">
+            <input
+              type="text"
+              name="location"
+              id="location"
+              placeholder="Location..."
+            />
+            <button class="btn">
+              <img src="./images/search.png" alt="Search" width="50" height="50">
+            </button>
+          </div>
+        </form>
+        <div class="details-wrapper">
+          <div class="city-details">
+            <div>
+              <span>Country</span>
+              <span class="country">UK</span>
+            </div>
+          </div>
+          <div class="weather-stats">
+            <h2>Weather Stats</h2>
+            <div>
+              <span>Clouds</span>
+              <span class="cloud">86%</span>
+            </div>
+            <div>
+              <span>Humidity</span>
+              <span class="humidity">62%</span>
+            </div>
+            <div>
+              <span>Wind</span>
+              <span class="wind-speed">8km/h</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <script src="js/app.js"></script>
-</body>
+  </body>
 </html>
