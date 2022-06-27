@@ -1,14 +1,11 @@
-import { IWeatherData } from "./util/filterData";
-
-
-  window.onload = () => {
-    if (localStorage.location) {
-      displayWeather(localStorage.location as string);
-      return;
-    } else {
-      displayWeather("london");
-    }
+window.onload = () => {
+  if (localStorage.location) {
+    displayWeather(localStorage.location as string);
+    return;
+  } else {
+    displayWeather("london");
   }
+};
 (document.querySelector("#form") as HTMLFormElement).addEventListener(
   "submit",
   (e: SubmitEvent) => {
@@ -27,9 +24,18 @@ import { IWeatherData } from "./util/filterData";
 );
 
 const reqData = async (location: string): Promise<IWeatherData> => {
-    const res = await fetch(`./weather/${location}`);
-    const weather = await res.json();
-    return weather;
+  const apiKey = "725db190927346f79ea144536220503";
+  const apiUrl = "https://api.weatherapi.com/v1/current.json?key=";
+  try {
+    const res = await fetch(`${apiUrl}${apiKey}&q=${location}&aqi=no`);
+    if (res.status === 200) {
+      const data = await res.json();
+      const filtered = filterData(data);
+      return filtered;
+    } else throw "failed";
+  } catch (err) {
+    throw `Failed, ${err}`;
+  }
 };
 
 const displayWeather = async (location: string) => {
@@ -176,3 +182,34 @@ const setSkyState = (code: number): string => {
   }
   return skyState;
 };
+
+const filterData = (data: any): IWeatherData => {
+  const filteredData: IWeatherData = {
+    name: data.location.name as string,
+    country: data.location.country as string,
+    localtime: data.location.localtime_epoch as number,
+    temp: data.current.temp_c as number,
+    isDay: data.current.is_day as 0 | 1,
+    icon: data.current.condition.icon as string,
+    code: data.current.condition.code as number,
+    windSpeed: data.current.wind_kph as number,
+    humidity: data.current.humidity as number,
+    cloud: data.current.cloud as number,
+    text: data.current.condition.text as string,
+  };
+  return filteredData;
+};
+
+interface IWeatherData {
+  name: string;
+  country: string;
+  localtime: number;
+  temp: number;
+  isDay: 0 | 1;
+  icon: string;
+  code: number;
+  windSpeed: number;
+  humidity: number;
+  cloud: number;
+  text: string;
+}
