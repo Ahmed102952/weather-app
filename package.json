@@ -3,7 +3,6 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "dev": "nodemon build/server.js",
     "build": "tsc",
     "lint": "eslint \"src/**/*.{ts,tsx}\" --quiet --fix"
   },
