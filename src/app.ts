@@ -76,7 +76,7 @@ const updateUI = async (weatherData: IWeatherData) => {
       timeOfTheDay = "night";
     }
     const skyStateImg = setSkyState(weatherData.code);
-    bg.src = `./images/${timeOfTheDay}/${skyStateImg}.jpg`;
+    bg.src = `https://ik.imagekit.io/b85lgzght1m/tr:w-${(window.innerWidth) + 300}/weather-app/images/${timeOfTheDay}/${skyStateImg}.jpg`;
 
     const { hour, min, dayInWeek, dayInMonth, month, year } = formatDate(
       weatherData.localtime
